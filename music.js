@@ -6,7 +6,3 @@ function killplay(){
   breakSound.play();
 }
 
-function setup(){
-  createCanvas(0);
-  bgmplay();
-}
