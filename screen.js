@@ -169,6 +169,8 @@ function drawRulePopup() {
 function showCreateRoomUI() {
   createRoomButton.hide();
   joinRoomButton.hide();
+  creditButton.hide();
+  ruleButtonLobby.hide();
 
   //배경
   push();
@@ -196,6 +198,8 @@ function showCreateRoomUI() {
 function showJoinRoomUI() {
   createRoomButton.hide();
   joinRoomButton.hide();
+  creditButton.hide();
+  ruleButtonLobby.hide();
 
   //배경
   push();
