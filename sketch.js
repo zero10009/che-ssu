@@ -11,6 +11,8 @@ function preload() {
   building = loadImage("assets/ChessBuilding.png");
   creditPic = loadImage("assets/yellowCredit.png");
 
+  bgm = loadSound("assets/chessu_bgm.mp3");
+  breakSound = loadSound("assets/break_sound.mp3");
   //p5.party 서버 연결, 공유 객체
   partyConnect("wss://demoserver.p5party.org", "chessu_test_260527_multi");
   sharedLobbyData = partyLoadShared("lobbyData");
