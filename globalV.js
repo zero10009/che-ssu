@@ -2,6 +2,12 @@
 //html 수정해야 적용됨.
 
 //시스템 전역변수
+
+
+let nickname;
+let screenMode = 0;
+
+//UI 전역변수
 let rulePage = 1;
 let rulePopupOpened = false;
 let ruleButtonTitle;
@@ -10,10 +16,7 @@ let rulePrevButton;
 let ruleNextButton;
 let ruleCloseButton;
 
-let nickname;
-let screenMode = 0;
-
-//UI 전역변수
+let creditOpened = false;
 let playButton;
 let inputNickname;
 let NicknameSaveButton;
