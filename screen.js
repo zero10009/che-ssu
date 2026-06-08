@@ -101,6 +101,7 @@ function showLobbyScreen() {
     ruleButtonLobby.hide();
     inputNickname.hide();
     NicknameSaveButton.hide();
+    creditButton.hide();
     return;
   }
 
