@@ -10,8 +10,6 @@ function preload() {
   fillTile = loadImage("assets/fillTile.png");
   building = loadImage("assets/ChessBuilding.png");
   creditPic = loadImage("assets/yellowCredit.png");
-  bgm = loadSound('assets/chessu_bgm.mp3');
-  breakSound = loadSound('assets/break_sound.mp3');
 
   //p5.party 서버 연결, 공유 객체
   partyConnect("wss://demoserver.p5party.org", "chessu_test_260527_multi");
@@ -38,8 +36,6 @@ function setup() {
 
   setupElements(); //setupElements.js
 
-  //캔버스
-  createCanvas(windowWidth, windowHeight);
   //개별 기물 스프라이트 로드
   img.resize(640, 480);
   building.resize(560, 640);
@@ -102,6 +98,8 @@ function setup() {
   chessBoard[0][15] = -kingNum - trailNum;
   chessBoard[0][14] = -pioneerNum;
   chessBoard[1][15] = -pioneerNum;
+
+  chessBoard[15][2] = -rookNum;
 
   //selected 배열 초기화
   for (let i = 0; i < 30; i++) {
