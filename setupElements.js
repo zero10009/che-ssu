@@ -74,6 +74,20 @@ function initLobbyElements() {
     createRoomPopUpOpened = true;
   });
 
+  creditButton = createButton("크레딧");
+  creditButton.size(120, 40);
+  creditButton.mousePressed(() => {
+    creditOpened = true;
+    hideAllUIElements();
+  });
+
+  closeCreditButton = createButton("X");
+  closeCreditButton.size(25, 25);
+  closeCreditButton.mousePressed(() => {
+    creditOpened = false;
+    hideAllUIElements();
+  });
+
   joinRoomButton = createButton("방 들어가기");
   joinRoomButton.position(windowWidth / 2 - 60, windowHeight / 2 + 35);
   joinRoomButton.mousePressed(() => {

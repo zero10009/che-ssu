@@ -23,19 +23,24 @@ function screenDetermination() {
     showTitleScreen();
     //showHowToPlayScreen();
   } else if (screenMode === 1) {
-    drawMyNickName();
-    if (createRoomPopUpOpened) {
-      showCreateRoomUI();
-    } else if (joinRoomPopUpOpened) {
-      showJoinRoomUI();
+    // 크레딧 팝업이 열려있다면 다른 로비 UI를 그리거나 띄우지 않고 크레딧만 보이게
+    if (creditOpened) {
+      showCreditScreenUI();
     } else {
-      showLobbyScreen();
+      drawMyNickName();
+      if (createRoomPopUpOpened) {
+        showCreateRoomUI();
+      } else if (joinRoomPopUpOpened) {
+        showJoinRoomUI();
+      } else {
+        showLobbyScreen();
+      }
     }
   } else if (screenMode === 2) {
     showRoomScreen();
   } else if (screenMode === 3) {
     if (gameover == 0) showGameScreen();
-    if (gameover == 1) creditScene();
+    //if (gameover == 1) creditScene();
     victory();
   }
   if (rulePopupOpened === true) {
@@ -98,6 +103,10 @@ function showLobbyScreen() {
     NicknameSaveButton.hide();
     return;
   }
+
+  creditButton.position(windowWidth / 2 - 60, windowHeight / 2 - 90);
+  creditButton.show();
+
   createRoomButton.position(width / 2 - 60, height / 2 - 25);
   createRoomButton.show();
   joinRoomButton.position(width / 2 - 60, height / 2 + 35);
@@ -118,6 +127,14 @@ function showLobbyScreen() {
 
   ruleButtonLobby.position(width / 2 - 60, height / 2 + 95);
   ruleButtonLobby.show();
+
+  closeCreditButton.hide();
+}
+
+function showCreditScreenUI() {
+  creditScene();
+  closeCreditButton.position(windowWidth - 50, 30);
+  closeCreditButton.show();
 }
 
 function drawRulePopup() {
