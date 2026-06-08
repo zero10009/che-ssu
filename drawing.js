@@ -6,6 +6,8 @@ function chessdraw() {
   else if (turn > 0) image(chessBoardBlack, width / 2, height / 2);
   pop();
 
+  bgmplay();
+
   for (let i = 0; i < 16; i++) {
     for (let j = 0; j < 16; j++) {
       // 흔적 타일
