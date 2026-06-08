@@ -101,8 +101,6 @@ function setup() {
   chessBoard[0][14] = -pioneerNum;
   chessBoard[1][15] = -pioneerNum;
 
-  chessBoard[15][2] = -rookNum;
-
   //selected 배열 초기화
   for (let i = 0; i < 30; i++) {
     selected[i] = false;
