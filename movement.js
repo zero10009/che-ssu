@@ -10,7 +10,10 @@ function movePiece(tileX, tileY){
   
   for(let tile of enemyTile){
     temp2 = pieceReboot(tile,tileX, tileY);
-    if(temp1 == 1 || temp2 == 1) break;
+    if(temp1 == 1 || temp2 == 1){
+      if (temp2 == 1) killplay();
+      break;
+    }
   }
   
   for(let tile of enterableBuilding){
@@ -20,7 +23,10 @@ function movePiece(tileX, tileY){
   
   for(let tile of destroyableBuilding){
     temp4 = pieceReboot(tile,tileX, tileY);
-    if(temp1 == 1 || temp2 == 1 || temp3 == 1 || temp4 == 1) break;
+    if(temp1 == 1 || temp2 == 1 || temp3 == 1 || temp4 == 1){
+      if (temp4 == 1) killplay();
+      break;
+    }
   }
 }
 
