@@ -18,8 +18,10 @@ function changeScreenMode(modeNumber) {
 
 function screenDetermination() {
   if (screenMode === 0) {
+    Background();
+
     showTitleScreen();
-    showHowToPlayScreen();
+    //showHowToPlayScreen();
   } else if (screenMode === 1) {
     drawMyNickName();
     if (createRoomPopUpOpened) {
@@ -36,17 +38,51 @@ function screenDetermination() {
     if (gameover == 1) creditScene();
     victory();
   }
+  if (rulePopupOpened === true) {
+    drawRulePopup();
+  }
+}
+
+function Background() {
+  push();
+  background(138, 43, 226);
+  textAlign(CENTER, CENTER);
+  textFont("Arial");
+  textSize(80);
+  fill(40, 10, 70);
+  text("CHE:SSU", windowWidth / 2, windowHeight / 2 - 186);
+  fill(255);
+  text("CHE:SSU", windowWidth / 2, windowHeight / 2 - 190);
+  rectMode(CENTER);
+  stroke(90, 20, 150);
+  strokeWeight(3);
+  fill(110, 30, 180);
+  rect(windowWidth / 2, windowHeight / 2 + 50, 340, 320, 15);
+  textAlign(CENTER, TOP);
+  textSize(22);
+  fill(255);
+  text("닉네임 설정", windowWidth / 2, windowHeight / 2 - 60);
+  pop();
 }
 
 function showTitleScreen() {
-  inputNickname.position(windowWidth / 2 - 100, windowHeight / 2 - 30);
+  if (rulePopupOpened === true) {
+    inputNickname.hide();
+    NicknameSaveButton.hide();
+    playButton.hide();
+    ruleButtonTitle.hide();
+    return;
+  }
+
+  inputNickname.position(windowWidth / 2 - 110, windowHeight / 2 - 10);
   inputNickname.show();
-
-  NicknameSaveButton.position(windowWidth / 2 + 30, windowHeight / 2 - 30);
+  NicknameSaveButton.position(windowWidth / 2 + 40, windowHeight / 2 - 10);
   NicknameSaveButton.show();
-
-  playButton.position(windowWidth / 2 - 50, windowHeight / 2 + 30);
+  playButton.position(windowWidth / 2 - 110, windowHeight / 2 + 70);
   playButton.show();
+
+  ruleButtonTitle.position(windowWidth / 2 - 110, windowHeight / 2 + 135);
+  ruleButtonTitle.show();
 }
 
 function showHowToPlayScreen() {
@@ -54,6 +90,14 @@ function showHowToPlayScreen() {
 }
 
 function showLobbyScreen() {
+  if (rulePopupOpened === true) {
+    createRoomButton.hide();
+    joinRoomButton.hide();
+    ruleButtonLobby.hide();
+    inputNickname.hide();
+    NicknameSaveButton.hide();
+    return;
+  }
   createRoomButton.position(width / 2 - 60, height / 2 - 25);
   createRoomButton.show();
   joinRoomButton.position(width / 2 - 60, height / 2 + 35);
@@ -71,6 +115,37 @@ function showLobbyScreen() {
   searchTitleInput.hide();
   joinConfirmButton.hide();
   closeJoinPopUpButton.hide();
+
+  ruleButtonLobby.position(width / 2 - 60, height / 2 + 95);
+  ruleButtonLobby.show();
+}
+
+function drawRulePopup() {
+  push();
+  rectMode(CENTER);
+  fill(0, 0, 0, 150);
+  rect(windowWidth / 2, windowHeight / 2, windowWidth, windowHeight);
+  fill(110, 30, 180);
+  stroke(255);
+  strokeWeight(3);
+  rect(windowWidth / 2, windowHeight / 2, 680, 520, 15);
+  imageMode(CENTER);
+  if (howToPlayImage[rulePage]) {
+    image(
+      howToPlayImage[rulePage],
+      windowWidth / 2,
+      windowHeight / 2,
+      640,
+      480,
+    );
+  }
+  rulePrevButton.position(windowWidth / 2 - 390, windowHeight / 2 - 20);
+  rulePrevButton.show();
+  ruleNextButton.position(windowWidth / 2 + 350, windowHeight / 2 - 20);
+  ruleNextButton.show();
+  ruleCloseButton.position(windowWidth / 2 + 310, windowHeight / 2 - 240);
+  ruleCloseButton.show();
+  pop();
 }
 
 function showCreateRoomUI() {
