@@ -187,11 +187,11 @@ let playerResources = {
 };
 
 let costs = {
-  pawn: { wood: 2, steel: 1, gold: 0 },
-  knight: { wood: 4, steel: 2, gold: 1 },
-  bishop: { wood: 3, steel: 3, gold: 1 },
-  rook: { wood: 5, steel: 4, gold: 2 },
-  queen: { wood: 5, steel: 4, gold: 2 },
+  pawn: { wood: 10, steel: 0, gold: 0 },
+  knight: { wood: 15, steel: 5, gold: 0 },
+  bishop: { wood: 20, steel: 5, gold: 1 },
+  rook: { wood: 25, steel: 5, gold: 1 },
+  queen: { wood: 30, steel: 10, gold: 3 },
 };
 
 let posX;
