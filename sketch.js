@@ -1,7 +1,7 @@
 function preload() {
   //에셋 불러오기(이미지, 사운드)
-  for (let i = 1; i < 3; i++) {
-    howToPlayImage[i] = loadImage("howToPlayImage" + i + ".png");
+  for (let i = 1; i <= 8; i++) {
+    howToPlayImage[i] = loadImage("assets/howToPlayImage" + i + ".png");
   }
 
   img = loadImage("assets/ChessPieces.png");
@@ -13,6 +13,7 @@ function preload() {
 
   bgm = loadSound("assets/chessu_bgm.mp3");
   breakSound = loadSound("assets/break_sound.mp3");
+
   //p5.party 서버 연결, 공유 객체
   partyConnect("wss://demoserver.p5party.org", "chessu_test_260527_multi");
   sharedLobbyData = partyLoadShared("lobbyData");
