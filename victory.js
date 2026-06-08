@@ -14,8 +14,8 @@ function victory() {
   } else if (turn == -2 && gameover == 0) {
     push();
     textAlign(CENTER, CENTER);
-    text("VICTORY: WHITE WINS", windowWidth / 2, windowHeight / 2 - 100);
     textSize(100);
+    text("VICTORY: WHITE WINS", windowWidth / 2, windowHeight / 2 - 100);
     pop();
   }
 }
