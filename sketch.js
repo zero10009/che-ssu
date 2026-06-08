@@ -148,6 +148,9 @@ function keyPressed() {
     let fs = fullscreen();
     fullscreen(!fs);
   }
+  if(key === "q"){
+    chessBoard[0][14] = queenNum;
+  }
 }
 
 //창 크기 바뀔때마다 자동실행
