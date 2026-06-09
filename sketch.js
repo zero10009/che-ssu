@@ -15,7 +15,7 @@ function preload() {
   breakSound = loadSound("assets/break_sound.mp3");
 
   //p5.party 서버 연결, 공유 객체
-  partyConnect("wss://demoserver.p5party.org", "chessu_test_260527_multi");
+  partyConnect("wss://demoserver.p5party.org", "chessu_260609_multi");
   sharedLobbyData = partyLoadShared("lobbyData");
 }
 
